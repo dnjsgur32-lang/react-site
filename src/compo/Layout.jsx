@@ -8,7 +8,7 @@ function Layout() {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/react-site">Home</Link>
+                        <Link to="/react-site/">Home</Link>
                     </li>
                     <li>
                         <Link to="/react-site/login">Login</Link>

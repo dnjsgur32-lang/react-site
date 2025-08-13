@@ -16,7 +16,6 @@ function Work1() {
 
       <button onClick={handleClick}>클릭해보세요.</button>
 
-      <h3>할 일 목록</h3>
       <ul>
         {todoList.map((item, index) => (
           <li key={index}>{item}</li>

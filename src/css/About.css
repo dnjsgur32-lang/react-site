@@ -1,71 +1,104 @@
-.container {
+.todo-container {
   max-width: 400px;
   margin: 30px auto;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  background-color: #fff;
-  font-family: 'Noto Sans KR', sans-serif;
+  border-radius: 12px;
+  background: #fdfdfd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  font-family: "Noto Sans KR", sans-serif;
 }
 
-h2 {
+/* 제목 */
+h3 {
   text-align: center;
-  color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-input[type="text"] {
-  width: calc(100% - 60px);
-  padding: 10px;
+/* 입력 영역 (세로 정렬) */
+.input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.input-area input {
+  padding: 8px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
-  font-size: 16px;
-  transition: border-color 0.2s;
 }
 
-input[type="text"]:focus {
-  border-color: #007bff;
-}
-
-button {
-  padding: 10px 15px;
-  margin-left: 8px;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  font-weight: 600;
+/* 버튼 스타일 - 작게 */
+.input-area button {
+  padding: 6px 8px;
+  background-color: #4cafef;
   color: white;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  font-size: 0.85rem;
 }
 
-button:hover {
-  background-color: #0056b3;
+.input-area button:hover {
+  background-color: #3a9ddb;
 }
 
-ul {
+/* 필터 버튼 세로 정렬 */
+.filter-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.filter-buttons button {
+  padding: 6px 8px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.filter-buttons button.active {
+  background-color: #4cafef;
+  color: white;
+}
+
+/* 목록 */
+.todo-list {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
-}
-
-li {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 12px;
-  border-bottom: 1px solid #eee;
-  font-size: 16px;
+  flex-direction: column; /* 세로로 나열 */
+  gap: 8px;
 }
 
-li button {
-  background-color: #dc3545;
-  padding: 5px 10px;
-  font-size: 14px;
+.todo-list li {
+  display: flex;
+  flex-direction: column; /* 내용과 버튼도 세로 배치 */
+  gap: 6px;
+  padding: 8px;
+  background-color: #fafafa;
+  border-radius: 6px;
 }
 
-li button:hover {
-  background-color: #a71d2a;
+.todo-list li.completed span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* 목록 내부 버튼 */
+.todo-list button {
+  background-color: #eee;
+  border: none;
+  padding: 4px 6px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.todo-list button:hover {
+  background-color: #ddd;
 }

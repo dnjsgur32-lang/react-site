@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import '../css/Layout.css'
+import '../css/Layout.css';
 
 function Layout() {
   return (
@@ -7,21 +7,14 @@ function Layout() {
       <h2>홈 페이지</h2>
       <nav>
         <ul>
-          <li>
-            <Link to="/react-site/">Home</Link>
-          </li>
-          <li>
-            <Link to="/react-site/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/react-site/work1">Work1</Link>
-          </li>
-          <li>
-            <Link to="/react-site/about">About</Link>
-          </li>
+          <li><Link to="/react-site/">Home</Link></li>
+          <li><Link to="/react-site/login">Login</Link></li>
+          <li><Link to="/react-site/work1">Work1</Link></li>
+          <li><Link to="/react-site/about">About</Link></li>
+          <li><Link to="/react-site/miniblog">MiniBlog</Link></li>
         </ul>
       </nav>
-      <Outlet></Outlet>
+      <Outlet />
     </div>
   );
 }

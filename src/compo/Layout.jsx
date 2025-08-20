@@ -1,33 +1,51 @@
 import { Link, Outlet } from "react-router-dom";
-import '../css/Layout.css';
+import { useState } from "react";
+import "../css/Layout.css";
 
 function Layout() {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
-    <div>
-      <h2>홈 페이지</h2>
-      <nav>
+    <div className="layoutContainer">
+      <h2 className="heading">홈 페이지</h2>
+
+      {/* 메뉴 열기/닫기 버튼 */}
+      <button 
+        className="menuToggleBtn" 
+        onClick={() => setShowMenu(!showMenu)}
+      >
+        {showMenu ? "메뉴 닫기" : "메뉴 열기"}
+      </button>
+
+      {/* 사이드 메뉴 */}
+      <nav className={`sidebar ${showMenu ? "show" : ""}`}>
         <ul>
           <li><Link to="/react-site/">Home</Link></li>
-          <li><Link to="/react-site/login">login</Link></li>
-          <li><Link to="/react-site/work1">work1</Link></li>
-          <li><Link to="/react-site/about">about</Link></li>
-          <li><Link to="/react-site/miniblog">miniblog</Link></li>
-          <li><Link to="/react-site/book">book</Link></li>
-          <li><Link to="/react-site/clock">clock</Link></li>
-          <li><Link to="/react-site/comment">comment</Link></li>
-          <li><Link to="/react-site/notification">notification</Link></li>
-          <li><Link to="/react-site/accommodate">accommodate</Link></li>
-          <li><Link to="/react-site/ConfirmButton">ConfirmButton</Link></li>
-          <li><Link to="/react-site/AttendanceBook">AttendanceBook</Link></li>
-          <li><Link to="/react-site/SignUp">SignUp</Link></li>
-          <li><Link to="/react-site/TemperatureInput">TemperatureInput</Link></li>
-          <li><Link to="/react-site/Card">Card</Link></li>
-          <li><Link to="/react-site/DarkOrLight">DarkOrLight</Link></li>
-          <li><Link to="/react-site/Blocks">Blocks</Link></li>
+          <li><Link to="/react-site/login">Login</Link></li>
+          <li><Link to="/react-site/work1">Work1</Link></li>
+          <li><Link to="/react-site/about">About</Link></li>
+          <li><Link to="/react-site/miniblog">MiniBlog</Link></li>
+          <li><Link to="/react-site/book">Book</Link></li>
+          <li><Link to="/react-site/clock">Clock</Link></li>
+          <li><Link to="/react-site/comment">Comment</Link></li>
+          <li><Link to="/react-site/notification">Notification</Link></li>
+          <li><Link to="/react-site/accommodate">Accommodate</Link></li>
+          <li><Link to="/react-site/confirmbutton">ConfirmButton</Link></li>
+          <li><Link to="/react-site/attendancebook">AttendanceBook</Link></li>
+          <li><Link to="/react-site/signup">SignUp</Link></li>
+          <li><Link to="/react-site/temperatureinput">TemperatureInput</Link></li>
+          <li><Link to="/react-site/profilecard">ProfileCard</Link></li>
+          <li><Link to="/react-site/darkorlight">DarkOrLight</Link></li>
+          <li><Link to="/react-site/blocks">Blocks</Link></li>
         </ul>
       </nav>
-      <Outlet />
+
+      {/* 메인 콘텐츠 */}
+      <div className="content">
+        <Outlet />
+      </div>
     </div>
   );
 }
+
 export default Layout;

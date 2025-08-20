@@ -18,7 +18,7 @@ import SignUp from "./comp_11/SignUp.jsx";
 import TemperatureInput from "./comp_12/TemperatureInput.jsx";
 import DarkOrLight from "./comp_14/DarkOrLight.jsx";
 import Blocks from "./comp_15/Blocks.jsx";
-import Card from "./comp_13/Card.jsx";
+import ProfileCard from "./comp_13/ProfileCard.jsx";
 
 function App() {
   return (
@@ -39,12 +39,12 @@ function App() {
             <Route path="accommodate/*" element={<Accommodate />} />
             <Route path="confirmbutton/*" element={<ConfirmButton />} />
             <Route path="landingpage/*" element={<LandingPage />} />
-            <Route path="AttendanceBook/*" element={<AttendanceBook />} />
-            <Route path="SignUp/*" element={<SignUp />} />
-            <Route path="TemperatureInput/*" element={<TemperatureInput />} />
-            <Route path="Card/*" element={<Card />} />
-            <Route path="DarkOrLight/*" element={<DarkOrLight />} />
-            <Route path="Blocks/*" element={<Blocks />} />
+            <Route path="attendanceBook/*" element={<AttendanceBook />} />
+            <Route path="signUp/*" element={<SignUp />} />
+            <Route path="temperatureInput/*" element={<TemperatureInput />} />
+            <Route path="ProfileCard/*" element={<ProfileCard />} />
+            <Route path="darkOrLight/*" element={<DarkOrLight />} />
+            <Route path="blocks/*" element={<Blocks />} />
           </Route>
         </Routes>
       </BrowserRouter>
